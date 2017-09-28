@@ -14,6 +14,15 @@ router.get('/', function (req, res) {
     })
 })
 
+router.get('/users/new', (req, res) => { 
+  res.render('add_user')
+})
+
+router.post('/users/new', (req, res) => {
+  
+  res.redirect('/')
+})
+
 router.get('/users/:id', (req, res) => {
 
   db.getUser(req.params.id, req.app.get('connection'))
@@ -26,13 +35,7 @@ router.get('/users/:id', (req, res) => {
     })
 })
 
-router.get('/users/new' (req, res) => {
 
-  db.getUsers(req.app.get('connection'))
-    .then()
-
-  res.render('add_user', )
-})
 
 
 
